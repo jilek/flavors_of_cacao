@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flavors of Chocolate</title>
+
+  <!-- BootStrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Flavors of Chocolate Dashboard</h1>
+        <h4>Use the interactive charts below to explore the dataset</h4>
+      </div>
+    </div>
+
+    <div id=info-row class="row">
+
+      <div id="selection-md8" class="col-md-8">
+
+        <div id="selection-well" class="well">
+          <h5>Select an Artisanal Chocolate Bar</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Chocolate Bar Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+
+      <div id="right-md4" class="col-md-4">
+
+        <div id="intro-text">
+          <p>
+            This site analyzes
+            <a href="https://www.kaggle.com/rtatman/chocolate-bar-ratings">Kaggle ChocolateBarRatings</a>.
+            <!-- The original dataset consists of 1,793 reviews from taste tests of &lsquo;Artisinal Chocolate Bars&rsquo;. -->
+            Select a bar from the pulldown menu to the left, and see the data, flavor rating, and the hightlighted
+            manufacturer's country along with the cacao country of origin.
+          </p>
+        </div>
+
+        <div id="gauge">
+
+        </div>
+        <div id="url-path1" class="url-path-class">
+          <a id="company-url" href="FOO">&nbsp;</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" id="mapid"></div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+
+  <script type="text/javascript" src="chocolate.js"></script>
+
+</body>
+
+</html>
